@@ -1,47 +1,36 @@
-# Node.js & Express.js – Backend Learning Repo
+# Node.js & Express.js – Backend Learning Repository
 
-This repository is my **personal learning journey** for **Node.js and Express.js**, focused on **pure backend development**.
-
-I am learning backend concepts step by step, not frontend or UI work.  
-The goal of this repo is to understand how Node and Express work under the hood and how to build REST APIs.
+This repository is my **personal learning journey** in **Node.js and Express.js**, focused purely on **backend development**.
+The goal is to understand **core Node concepts**, build REST APIs, and strengthen backend skills step by step.
 
 ---
 
-## 📌 Purpose of This Repository
+## 📌 Purpose
 
-- Learn **Node.js fundamentals**
-- Understand **core Node modules** (fs, path, os, http, etc.)
-- Learn **Express.js** for building APIs
-- Practice **backend-only concepts**
-- Follow a structured, long-form tutorial
-- Build strong backend foundations before moving to databases & auth
+* Learn **Node.js fundamentals**
+* Explore **core Node modules**: `fs`, `path`, `os`, `http`
+* Understand **asynchronous behavior** and the **event loop**
+* Learn **Express.js** for backend API development
+* Practice backend concepts **without frontend/UI**
 
-❌ No frontend frameworks  
-❌ No UI focus  
-✅ Backend only
+✅ Backend-focused
+❌ No frontend frameworks
+❌ No UI work
 
 ---
 
-## 🎓 Course & Credits (Important)
+## 🎓 Credits
 
-This repository closely follows the **freeCodeCamp.org** course:
+This repository follows the **freeCodeCamp.org** course:
 
-**Node.js and Express.js – Full Course**  
-📺 freeCodeCamp.org (YouTube)  
-👨‍🏫 Course developed by **John Smilga**  
-📌 Channel: Coding Addict
+**Node.js and Express.js – Full Course**
 
-- Course link:  
-  https://www.youtube.com/watch?v=Oe421EPjeBE
+* Instructor: **John Smilga** (Coding Addict)
+* YouTube: [Course Link](https://www.youtube.com/watch?v=Oe421EPjeBE)
+* Source Code: [GitHub Repository](https://github.com/john-smilga/node-express-course)
 
-- Original source code:  
-  https://github.com/john-smilga/node-express-course
-
-⚠️ **Disclaimer**  
-Most of the code here is **written while following the tutorial** and may look **very similar (≈90%)** to the instructor’s code.  
-This repository is **for educational purposes only**, not for commercial use or redistribution as original work.
-
-All credit for course structure and examples goes to **John Smilga** and **freeCodeCamp.org**.
+⚠️ **Disclaimer:**
+Code here is written while following the tutorial and may closely resemble the instructor’s examples (~90%). This repository is **for educational purposes only**. All credit for course content goes to **John Smilga / freeCodeCamp.org**.
 
 ---
 
@@ -61,14 +50,17 @@ node-express/
 ├── 09-fs-async.js
 ├── 10-sync-vs-async.js
 ├── 11-http.js
+├── 12-npm-demo.js
+├── 13-event-loop.js
 ├── app.js
 │
 ├── content/
-│ ├── first.txt
-│ ├── second.txt
-│ ├── result_sync.txt
-│ ├── result_async.txt
-│ └── subfolder/
+│   ├── first.txt
+│   ├── second.txt
+│   ├── result_sync.txt
+│   ├── result_async.txt
+│   └── subfolder/
+|        ├── test.txt
 │
 ├── package.json
 ├── package-lock.json
@@ -79,33 +71,31 @@ Each file corresponds to a **specific topic** from the course.
 
 ---
 
-## 🧠 Topics Covered So Far
+## 🧠 Topics Covered
 
 ### Node.js Core
-- What Node.js is
-- Globals
-- Modules (CommonJS)
-- Built-in modules:
-  - `fs` (sync & async)
-  - `path`
-  - `os`
-  - `http`
-- Event Loop basics
-- Async vs Sync behavior
+
+* Node.js fundamentals
+* Globals
+* Modules (CommonJS)
+* Built-in modules: `fs` (sync & async), `path`, `os`, `http`
+* Event loop basics
+* Synchronous vs asynchronous code
 
 ### npm
-- `package.json`
-- `package-lock.json`
-- Installing & managing packages
-- Why `node_modules` is ignored
 
-### Express.js (Upcoming / In Progress)
-- Express basics
-- Routing
-- Middleware
-- REST APIs
-- Controllers
-- HTTP methods (GET, POST, PUT, DELETE)
+* `package.json` – high-level project metadata and dependencies
+* `package-lock.json` – locks exact dependency versions
+* Installing and managing packages
+* Ignoring `node_modules` in Git
+
+### Express.js (In Progress)
+
+* Express basics
+* Routing & controllers
+* Middleware
+* REST APIs
+* HTTP methods: GET, POST, PUT, DELETE
 
 ---
 
@@ -115,66 +105,58 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/Code-X-Slayer/node-express.git
+cd node-express
 ```
 
 Install dependencies:
 
-``` bash
+```bash
 npm install
 ```
 
-Run files individually:
+Run individual files:
 
-``` bash
+```bash
 node 01-intro.js
 ```
 
-Or run the app:
-``` bash
+Run the main app:
+
+```bash
 node app.js
 ```
 
 ---
 
-📦 Dependencies
+## 📦 Dependencies
 
-Node.js
-
-npm
-
-Express (later stages)
-
-Lodash (used for examples)
-
-Bootstrap (installed but not a focus — backend only)
+* **Node.js**
+* **npm**
+* **Express.js** (later stages)
+* **Lodash** (for examples)
+* **Bootstrap** (installed, not a focus — backend only)
 
 ---
 
-🚀 Future Plans
+## 🚀 Future Plans
 
-Finish Express section
-
-Build REST APIs
-
-Add database integration (MongoDB)
-
-Authentication & authorization
-
-Backend best practices
+* Complete **Express.js section**
+* Build **REST APIs**
+* Integrate with **databases (MongoDB)**
+* Implement **authentication & authorization**
+* Follow **backend best practices**
 
 ---
 
-🧑‍💻 Author
+## 🧑‍💻 Author
 
-Learning backend development step by step.
-This repo documents progress, experiments, and understanding — not polished production code.
+This repository documents my **backend learning journey**, experiments, and notes.
+It is not production-ready code.
 
 ---
 
-📜 License
+## 📜 License
 
-This project is for learning and educational purposes only.
-Original course content © John Smilga / freeCodeCamp.org.
-
+Educational use only. Original course content © John Smilga / freeCodeCamp.org.
 
 ---
