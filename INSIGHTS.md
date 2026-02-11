@@ -227,6 +227,110 @@ module.exports = { john, peter, susan }
 
 ---
 
+## 11. Advanced Async Patterns & Performance Considerations
+
+This section focuses on **real-world async behavior in Node.js**, highlighting how blocking code affects performance and how to properly handle asynchronous file operations using **Promises** and **async/await**.
+
+---
+
+### 🚫 Blocking vs Non-Blocking Code
+
+Node.js runs on a **single-threaded event loop**.
+CPU-intensive or synchronous code can **block the event loop**, preventing other requests from being handled.
+
+**Key takeaway:**
+
+* Avoid heavy synchronous loops inside request handlers.
+* Blocking code delays **all incoming requests**, even for different routes.
+
+```js
+// Blocking loop inside a route (bad practice)
+for (let i = 0; i < 200; i++) {
+  for (let j = 0; j < 400; j++) {}
+}
+```
+
+✔️ Always offload heavy tasks or use async approaches when possible.
+
+---
+
+### 🤝 Creating Promises Manually
+
+Before native promise APIs, callbacks were commonly wrapped inside Promises to improve readability and control.
+
+```js
+const { readFile } = require('fs')
+
+const getText = (path) =>
+  new Promise((resolve, reject) => {
+    readFile(path, 'utf-8', (err, data) => {
+      if (err) reject(err)
+      else resolve(data)
+    })
+  })
+```
+
+This pattern helps avoid **callback nesting** and enables `async/await`.
+
+---
+
+### ✨ Async / Await Refactor
+
+Using `async/await` makes asynchronous code look **synchronous and easier to reason about**, while remaining non-blocking.
+
+```js
+const start = async () => {
+  try {
+    const first = await getText('./content/first.txt')
+    const second = await getText('./content/second.txt')
+    console.log(first, second)
+  } catch (err) {
+    console.error(err)
+  }
+}
+```
+
+✔️ Cleaner
+✔️ Easier error handling
+✔️ More maintainable
+
+---
+
+### 🧩 Native Promise-Based FS API
+
+Node.js provides a **built-in Promise API** for `fs`, eliminating the need for manual wrapping or `util.promisify`.
+
+```js
+const { readFile, writeFile } = require('fs').promises
+
+const start = async () => {
+  const first = await readFile('./content/first.txt', 'utf-8')
+  const second = await readFile('./content/second.txt', 'utf-8')
+
+  await writeFile(
+    './content/result-mind-grenade.txt',
+    `${first}\n${second}`
+  )
+}
+```
+
+**Why this matters:**
+
+* Less boilerplate
+* Official Node.js API
+* Best practice for modern Node apps
+
+---
+
+### 🧠 Key Learnings
+
+* Blocking code directly impacts server responsiveness
+* Promises simplify async flow control
+* `async/await` improves readability and debugging
+* Prefer `fs.promises` over callbacks or manual promisification
+
+---
+
 ✅ **Summary**
 
 * Node.js is **event-driven, single-threaded, and asynchronous**

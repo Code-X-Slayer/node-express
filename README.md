@@ -52,6 +52,7 @@ node-express/
 ├── 11-http.js
 ├── 12-npm-demo.js
 ├── 13-event-loop.js
+├── 14-async-patterns.js
 ├── app.js
 │
 ├── content/
@@ -59,6 +60,7 @@ node-express/
 │   ├── second.txt
 │   ├── result_sync.txt
 │   ├── result_async.txt
+│   ├── result-mind-grenade.txt
 │   └── subfolder/
 |        ├── test.txt
 │

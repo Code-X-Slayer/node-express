@@ -32,7 +32,7 @@
 const http = require("http")
 const fs = require("fs")
 
-// version 1 : sending whole file to user
+// version 1 : sending whole file to user (bad practice)
 // let server = http.createServer((req, res) => {
 //     const text = fs.readFileSync('./content/big.txt', 'utf-8')
 //     res.end(text)
